@@ -1,15 +1,15 @@
 import React from 'react'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
-import {MainPage} from "./pages/MainPage";
-import './styles/mainPage.css'
-import {FirstPage} from "./pages/FirstPage";
-import './styles/stepper.css'
-import './styles/firstPage.css'
-import {SecondPage} from "./pages/SecondPage";
-import './styles/secondPage.css'
-import './styles/App.css'
-import {ThirdPage} from "./pages/ThirdPage";
-import './styles/thirdPage.css'
+import {MainPage} from "../src/pages/MainPage";
+import '../src/styles/mainPage.css'
+import {FirstPage} from "../src/pages/FirstPage";
+import '../src/styles/stepper.css'
+import '../src/styles/firstPage.css'
+import {SecondPage} from "../src/pages/SecondPage";
+import '../src/styles/secondPage.css'
+import '../src/styles/App.css'
+import {ThirdPage} from "../src/pages/ThirdPage";
+import '../src/styles/thirdPage.css'
 function App() {
     return (
         <div>

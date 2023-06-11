@@ -1,6 +1,6 @@
 import React from "react"
 import '../styles/modal.css'
-import Button from "./Button";
+import Button from "../components/Button";
 import {useNavigate} from "react-router-dom";
 
 export const Modal = ({active, setActive, errorAxios ,children}) => {
