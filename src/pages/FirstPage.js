@@ -82,13 +82,13 @@ export function FirstPage() {
                        onChange={(event) => setSurname(event.target.value)}/>
                 {errorSurName && <Error>{errorSurName}</Error>}
             </div>
-            <div className="InputFirst">
+            <div className="InputFirst select">
                 <label className="title-">Sex</label>
-                <Select id="field-sex" value={sex} className="input-area input-areaFirstPage"
+                <Select id="field-sex" value={sex} className="input-area select input-areaFirstPage "
                         onChange={(event) => setSex(event.target.value)}>
-                    <MenuItem disabled value="n">
-                        <p className="notChosen">Не выборано</p>
-                    </MenuItem>
+                    {sex === 'n' && <MenuItem className="notChosen" disabled value="n">
+                        Не выборано
+                    </MenuItem>}
                     <MenuItem id="field-sex-option-man" value='Man'>Man</MenuItem>
                     <MenuItem id="field-sex-option-woman" value='Woman'>Woman</MenuItem>
                 </Select>

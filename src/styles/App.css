@@ -1,4 +1,4 @@
-
+@import url(//db.onlinewebfonts.com/c/37086b994764dba84b2ee0f1083bfeed?family=SB+Sans+Interface);
 body {
   transform-origin: top left;
   justify-content: center;
@@ -9,10 +9,10 @@ label {
   display: block;
   margin-bottom: 6px;
 }
-* {font-family: Arial}
+* {font-family: SB Sans Interface}
 
 textarea {
-  width: 80%;
+  width: 100%;
   height: 84px;
   outline: none;
 }

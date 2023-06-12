@@ -69,6 +69,7 @@ const Dot = styled.div`
         border-radius: 50%;
     }
   `}
+}
 `
 
 const Line = styled.div`
@@ -84,8 +85,11 @@ const StepNumber = styled.div`
   color: ${(p) => (p.active ? "#5558FA" : "#666")};
   position: absolute;
   left: ${(p) => p.left}%;
-  bottom: 0px;
+  bottom: 0;
   transform: translateX(-50%);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
 `
 
 const CheckIcon = () => {

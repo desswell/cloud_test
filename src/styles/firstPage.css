@@ -1,6 +1,14 @@
 .InputFirst {
     position: relative;
     padding-top: 48px;
+    margin-top: 3%;
+}
+.InputFirst.select {
+    margin-bottom: 100px;
+}
+
+.InputFirst.textarea {
+    margin-bottom: 10%;
 }
 
 .CheckboxWrapper > div > label {
@@ -27,6 +35,9 @@
 @media screen and (min-width: 1921px) {
     .notChosen {
         font-size: 24px;
+    }
+    .input-areaFirstPage {
+        width: 600px;
     }
 }
 /*@media screen and (max-width: 899px) {*/

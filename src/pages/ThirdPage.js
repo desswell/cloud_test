@@ -44,7 +44,7 @@ export function ThirdPage () {
     return(
         <div className="main-page-container">
             <Stepper step={2}/>
-            <div className="InputFirst">
+            <div className="InputFirst textarea">
                 <label className="title-">About</label>
                 <textarea id="field-about" maxLength={200} placeholder="About" value={about} onChange={(event) => {
                     dispatch(setAboutAction(event.target.value))
