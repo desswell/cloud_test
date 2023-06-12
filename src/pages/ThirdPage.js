@@ -22,7 +22,7 @@ export function ThirdPage () {
     const [error, setError] = useState(null)
     const [errorAxios, setErrorAxios] = useState(true)
     async function postAxiosData () {
-        await axios.post(`https://api.sbercloud.ru/content/v1/bootcamp/fronten`, data).then(() => {
+        await axios.post(`https://api.sbercloud.ru/content/v1/bootcamp/frontend`, data).then(() => {
             setActive(true)
             setErrorAxios(false)
         }).catch(() => {
