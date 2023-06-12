@@ -55,7 +55,7 @@ export function FirstPage() {
             else if(errors.includes('5')) setErrorName('Please, don`t use numbers')
             else setErrorName(null)
             if (errors.includes('3')) setErrorSurname('Enter your Surname')
-            else if(errors.includes('6')) setErrorSurname('Please, don`t use special symbols')
+            else if(errors.includes('6')) setErrorSurname('Please, don`t use numbers')
             else setErrorSurname(null)
             if (errors.includes('7')) setErrorSex('Please, select your Sex')
             else setErrorSex(null)
