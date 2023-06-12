@@ -66,7 +66,10 @@
 
 @media screen and (min-width: 1921px) {
     /* Стили для экранов с шириной больше 1920px */
-
+    .close-button {
+        height: 50px;
+        width: 50px;
+    }
     .counter {
         bottom: 5px;
         margin-left: 77%;
@@ -75,7 +78,7 @@
 
     .modal_header {
         padding-left: 25px;
-        font-size: 24px;
+        font-size: 28px;
     }
 
     .CompletedIcon {

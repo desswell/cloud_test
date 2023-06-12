@@ -22,7 +22,7 @@ export function ThirdPage () {
     const [error, setError] = useState(null)
     const [errorAxios, setErrorAxios] = useState(true)
     async function postAxiosData () {
-        await axios.post(`https://api.sbercloud.ru/content/v1/bootcamp/frontend`, data).then(() => {
+        await axios.post(`https://api.sbercloud.ru/content/v1/bootcamp/fronten`, data).then(() => {
             setActive(true)
             setErrorAxios(false)
         }).catch(() => {
@@ -62,9 +62,9 @@ export function ThirdPage () {
             {active && <Modal active={active} setActive={setActive} errorAxios={errorAxios}>
                 <div className={errorAxios ? "modal_header error" : "modal_header"}>
                     {errorAxios ? 'Ошибка' : 'Форма успешно отправлена'}
-                    <button className="close-button" onClick={() => setActive(false)}>
-                    <CloseIcon/>
-                    </button>
+                    {errorAxios && <button className="close-button" onClick={() => setActive(false)}>
+                        <CloseIcon/>
+                    </button>}
                 </div>
                 <div className={errorAxios ? "CompletedIcon Error" : "CompletedIcon"}>
                     {errorAxios ? <ErrorIcon/> : <CompleteIcon/>}
