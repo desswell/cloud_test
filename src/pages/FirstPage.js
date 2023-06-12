@@ -30,6 +30,12 @@ export function FirstPage() {
     const [errorSurName, setErrorSurname] = useState(null);
     const [errorSex, setErrorSex] = useState(null);
     const dispatch = useDispatch()
+    const dispatching = () => {
+        dispatch(setNicknameAction(nickname))
+        dispatch(setNameAction(name))
+        dispatch(setSurnameAction(surName))
+        dispatch(setSexAction(sex))
+    }
     const HandleClick = () => {
         schemaFirstPage.validate({
             nickname: nickname,
@@ -37,10 +43,7 @@ export function FirstPage() {
             surname: surName,
             sex: sex
         }, {abortEarly: false}).then(val => {
-                dispatch(setNicknameAction(nickname))
-                dispatch(setNameAction(name))
-                dispatch(setSurnameAction(surName))
-                dispatch(setSexAction(sex))
+                dispatching()
                 navigate('/2')
             }
         ).catch(error => {
@@ -92,7 +95,10 @@ export function FirstPage() {
                 {errorSex && <Error>{errorSex}</Error>}
             </div>
             <div className='btn-pos'>
-                <Button id="button-back" outline onClick={() => navigate('/')}>Назад</Button>
+                <Button id="button-back" outline onClick={() => {
+                    dispatching()
+                    navigate('/')
+                }}>Назад</Button>
                 <Button id="button-next" onClick={HandleClick}>Далее</Button>
             </div>
         </div>

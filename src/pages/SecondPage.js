@@ -25,7 +25,7 @@ export function SecondPage() {
     })
     const [errors, setErrors] = useState([])
     const dispatch = useDispatch()
-    const [radio, setRadio] = useState(useRadio())
+    const radio= useRadio()
     const [checkBox, setCheckBox] = useState(useCheckBox())
     const [errorCheckBox, setErrorCheckBox] = useState(undefined)
     const [errorRadio, setErrorRadio] = useState(undefined)
@@ -69,9 +69,8 @@ export function SecondPage() {
     useEffect(() => {
         if (errors.every((element) => element === null) && errors.length === advantages.length
         && errorRadio === null && errorCheckBox === null) {
-            navigate('/3')
-            dispatch(setRadioAction(radio))
             dispatch(setCheckBoxAction(checkBox))
+            navigate('/3')
         }
     }, [errors])
 
@@ -109,7 +108,7 @@ export function SecondPage() {
                         aria-labelledby="demo-controlled-radio-buttons-group"
                         name="controlled-radio-buttons-group"
                         value={radio}
-                        onChange={e => setRadio(e.target.value)}
+                        onChange={e => dispatch(setRadioAction(e.target.value))}
                     >
                         <FormControlLabel id="field-radio-group-option-1" value="1" control={<Radio/>} label="1"/>
                         <FormControlLabel id="field-radio-group-option-2" value="2" control={<Radio/>} label="2"/>
@@ -119,7 +118,10 @@ export function SecondPage() {
                 {errorRadio && <Error>{errorRadio}</Error>}
             </div>
             <div className='btn-pos'>
-                <Button id="button-back" outline onClick={() => navigate('/1')}>Назад</Button>
+                <Button id="button-back" outline onClick={() => {
+                    dispatch(setCheckBoxAction(checkBox))
+                    navigate('/1')
+                }}>Назад</Button>
                 <Button id="button-next" onClick={HandleClick}>Далее</Button>
             </div>
         </div>
