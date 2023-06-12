@@ -3,7 +3,6 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import {MainPage} from "../src/pages/MainPage";
 import '../src/styles/mainPage.css'
 import {FirstPage} from "../src/pages/FirstPage";
-import '../src/styles/stepper.css'
 import '../src/styles/firstPage.css'
 import {SecondPage} from "../src/pages/SecondPage";
 import '../src/styles/secondPage.css'

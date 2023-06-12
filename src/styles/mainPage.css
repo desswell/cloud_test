@@ -64,3 +64,67 @@
     padding: 24px;
     margin: 0 auto;
 }
+@media screen and (max-width: 899px) {
+    /* Стили для экранов меньше 900px */
+    .avatarMain {
+        width: 65px;
+    }
+    .Input {
+        padding-top: 24px;
+    }
+
+    .main-page-container {
+        max-width: none;
+        padding: 16px;
+    }
+
+    .positions {
+        padding: 0;
+    }
+}
+
+@media screen and (min-width: 1921px) {
+    /* Стили для экранов с шириной больше 1920px */
+
+    .avatarMain {
+        width: 160px;
+        height: 160px;
+        border-radius: 200px;
+    }
+
+    .myName {
+        font-size: 40px;
+        line-height: 52px;
+        padding-top: 20px;
+    }
+
+    .linkToText {
+        width: 104px;
+        font-size: 24px;
+    }
+
+    .positions {
+        padding: 0 96px;
+    }
+
+    .input-area {
+        height: 64px;
+        padding: 24px;;
+        width: 450px;
+        font-size: 24px;
+    }
+
+    .downInput {
+        padding-top: 48px;
+    }
+
+    .main-page-container {
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+    .title- {
+        font-size: 24px;
+        color: #333333;
+        margin-bottom: 30px;
+    }
+}

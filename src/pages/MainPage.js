@@ -48,7 +48,20 @@ export function MainPage() {
         <div className="main-page-container">
             <div className="linkTo">
                 <div className="avatarMain">
-                    <Avatar src={myAvatar} sx={{width: 80, height: 80}}></Avatar>
+                    <Avatar src={myAvatar}
+                            sx={{
+                                width: 80,
+                                height: 80,
+                                '@media screen and (max-width: 899px)': {
+                                    width: 65,
+                                    height: 65,
+                                },
+                                '@media screen and (min-width: 1921px)': {
+                                    width: 160,
+                                    height: 160,
+                                }
+                            }}
+                    ></Avatar>
                 </div>
                 <div className='positions'>
                     <div className="myName">Ким Алексей</div>

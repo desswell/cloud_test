@@ -7,5 +7,8 @@ const StyledError = styled.span`
   font-size: 80%;
   margin-top: 6px;
   color: #eb5a5a;
+  @media screen and (min-width: 1921px) {
+  font-size: 130%;
+  }
 `
 export default Error

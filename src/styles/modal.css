@@ -39,3 +39,34 @@
     justify-content: right;
     margin-right: 30px;
 }
+@media screen and (max-width: 899px) {
+    /* Стили для экранов меньше 900px */
+
+    .modal {
+        overflow: auto;
+    }
+
+    .modal__content {
+        width: calc(100% - 32px);
+        max-width: 400px;
+        height: auto;
+        min-height: 200px;
+        padding: 20px;
+    }
+
+    .Button-close {
+        margin-top: 16px;
+    }
+}
+
+@media screen and (min-width: 1921px) {
+    /* Стили для экранов с шириной больше 1920px */
+
+    .modal__content {
+        width: 920px;
+        height: 624px;
+    }
+    .Button-close {
+        margin-top: 150px;
+    }
+}

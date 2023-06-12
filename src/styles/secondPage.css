@@ -25,10 +25,33 @@
 }
 .btn-trash {
     border-color: transparent;
-    width: 30px;
-    height: 30px;
     background: #FFFFFF;
+    padding-bottom: 5px;
 }
 .CheckBox {
-
+max-width: 20px;
+}
+@media screen and (min-width: 1921px) {
+    .field-advantage{
+        width: 600px;
+        height: 64px;
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+    .button-add {
+        margin-top: 20px;
+        width: 88px;
+        height: 88px;
+        padding-left: 30px;
+    }
+    .btn-trash {
+        padding-bottom: 10px;
+    }
+    .css-j204z7-MuiFormControlLabel-root .MuiFormControlLabel-label {
+        font-size: 2em;
+        margin-left: 20px;
+    }
+    .MuiRadio-root {
+        transform: scale(2);
+    }
 }

@@ -34,3 +34,44 @@
 .CompletedIcon.Error {
     background: rgba(232, 78, 88, 0.15);
 }
+@media screen and (max-width: 899px) {
+    /* Стили для экранов меньше 900px */
+
+    .counter {
+        bottom: 8px;
+        margin-left: 60%;
+    }
+
+    .modal_header {
+        padding-left: 16px;
+        font-size: 18px;
+    }
+
+    .CompletedIcon {
+        margin-top: 32px;
+        width: 56px;
+        height: 56px;
+        margin-left: calc(50% - 56px / 2);
+    }
+}
+
+@media screen and (min-width: 1921px) {
+    /* Стили для экранов с шириной больше 1920px */
+
+    .counter {
+        bottom: 5px;
+        margin-left: 77%;
+        font-size: 16px;
+    }
+
+    .modal_header {
+        padding-left: 25px;
+        font-size: 24px;
+    }
+
+    .CompletedIcon {
+        transform: scale(2);
+        margin-top: 200px;
+        margin-left: calc(50% - 80px / 2);
+    }
+}

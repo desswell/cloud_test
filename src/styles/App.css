@@ -1,4 +1,6 @@
+
 body {
+  transform-origin: top left;
   justify-content: center;
   padding-top: 24px;
   background: #f4f4f5;
@@ -19,4 +21,20 @@ input {
 }
 button {
   cursor: pointer;
+}
+@media screen and (min-width: 1921px) {
+  .MuiCheckbox-root {
+    transform: scale(2);
+    margin-bottom: 10px;
+  }
+  .css-j204z7-MuiFormControlLabel-root {
+    margin-bottom: 40px;
+  }
+  .CheckBox {
+    max-width: 40px;
+  }
+  textarea {
+    font-size: 24px;
+    height: 160px;
+  }
 }
