@@ -83,7 +83,7 @@ export function SecondPage() {
                 {advantageObj.map((data, index) =>
                         <Advantages props={data} error={errors[index]} key={data.id}/>
                     )}
-                <button className="button-add" onClick={HandleClickAdd}><AddIcon/></button>
+                <button id="button-add" className="button-add" onClick={HandleClickAdd}><AddIcon/></button>
             </div>
             <div className="InputFirst CheckboxWrapper">
                 <label className="title-">Checkbox group</label>
@@ -96,9 +96,9 @@ export function SecondPage() {
                         setCheckBox(checkBox.filter((item) => item !== value))
                     }
                 }}>
-                    <FormControlLabel value={1} control={<Checkbox checked={checkBox.includes('1')}/>} label="1"/>
-                    <FormControlLabel value={2} control={<Checkbox checked={checkBox.includes('2')}/>} label="2"/>
-                    <FormControlLabel value={3} control={<Checkbox checked={checkBox.includes('3')}/>} label="3"/>
+                    <FormControlLabel id="field-checkbox-group-option-1" value={1} control={<Checkbox checked={checkBox.includes('1')}/>} label="1"/>
+                    <FormControlLabel id="field-checkbox-group-option-2" value={2} control={<Checkbox checked={checkBox.includes('2')}/>} label="2"/>
+                    <FormControlLabel id="field-checkbox-group-option-3" value={3} control={<Checkbox checked={checkBox.includes('3')}/>} label="3"/>
                 </FormGroup>
                 {errorCheckBox && <Error>{errorCheckBox}</Error>}
             </div>
@@ -111,16 +111,16 @@ export function SecondPage() {
                         value={radio}
                         onChange={e => setRadio(e.target.value)}
                     >
-                        <FormControlLabel value="1" control={<Radio/>} label="1"/>
-                        <FormControlLabel value="2" control={<Radio/>} label="2"/>
-                        <FormControlLabel value="3" control={<Radio/>} label="3"/>
+                        <FormControlLabel id="field-radio-group-option-1" value="1" control={<Radio/>} label="1"/>
+                        <FormControlLabel id="field-radio-group-option-2" value="2" control={<Radio/>} label="2"/>
+                        <FormControlLabel id="field-radio-group-option-3" value="3" control={<Radio/>} label="3"/>
                     </RadioGroup>
                 </FormControl>
                 {errorRadio && <Error>{errorRadio}</Error>}
             </div>
             <div className='btn-pos'>
-                <Button outline onClick={() => navigate('/1')}>Назад</Button>
-                <Button onClick={HandleClick}>Далее</Button>
+                <Button id="button-back" outline onClick={() => navigate('/1')}>Назад</Button>
+                <Button id="button-next" onClick={HandleClick}>Далее</Button>
             </div>
         </div>
     )

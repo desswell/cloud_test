@@ -8,7 +8,7 @@ import {schemaThirdPage} from "../components/Yup";
 import Error from "../components/Error";
 import axios from "axios";
 import {Modal} from "../components/Modal";
-import {CompleteIcon, ErrorIcon} from "../icons";
+import {CloseIcon, CompleteIcon, ErrorIcon} from "../icons";
 
 export function ThirdPage () {
     const navigate = useNavigate()
@@ -46,7 +46,7 @@ export function ThirdPage () {
             <Stepper step={2}/>
             <div className="InputFirst">
                 <label className="title-">About</label>
-                <textarea  maxLength={200} placeholder="About" value={about} onChange={(event) => {
+                <textarea id="field-about" maxLength={200} placeholder="About" value={about} onChange={(event) => {
                     dispatch(setAboutAction(event.target.value))
                     setLength(event.target.value.length)
                 }}/>
@@ -56,17 +56,19 @@ export function ThirdPage () {
             </div>
             {error && <Error>{error}</Error>}
             <div className='btn-pos'>
-                <Button outline onClick={() => navigate('/2')}>Назад</Button>
-                <Button onClick={HandleClick}>Отправить</Button>
+                <Button id="button-back" outline onClick={() => navigate('/2')}>Назад</Button>
+                <Button id="button-next" onClick={HandleClick}>Отправить</Button>
             </div>
             {active && <Modal active={active} setActive={setActive} errorAxios={errorAxios}>
                 <div className={errorAxios ? "modal_header error" : "modal_header"}>
                     {errorAxios ? 'Ошибка' : 'Форма успешно отправлена'}
+                    <button className="close-button" onClick={() => setActive(false)}>
+                    <CloseIcon/>
+                    </button>
                 </div>
                 <div className={errorAxios ? "CompletedIcon Error" : "CompletedIcon"}>
                     {errorAxios ? <ErrorIcon/> : <CompleteIcon/>}
                 </div>
-
             </Modal>}
         </div>
     )

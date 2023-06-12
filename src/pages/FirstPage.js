@@ -63,37 +63,37 @@ export function FirstPage() {
             <Stepper step={0}/>
             <div className="InputFirst">
                 <label className="title-">NickName</label>
-                <input placeholder="Nickname" maxLength={30} value={nickname} className="input-area input-areaFirstPage"
+                <input id="field-nickname" placeholder="Nickname" maxLength={30} value={nickname} className="input-area input-areaFirstPage"
                        onChange={(event) => setNickname(event.target.value)}/>
                 {errorNickname && <Error>{errorNickname}</Error>}
             </div>
             <div className="InputFirst">
                 <label className="title-">Name</label>
-                <input placeholder="Name" maxLength={50} value={name} className="input-area input-areaFirstPage"
+                <input id="field-name" placeholder="Name" maxLength={50} value={name} className="input-area input-areaFirstPage"
                        onChange={(event) => setName(event.target.value)}/>
                 {errorName && <Error>{errorName}</Error>}
             </div>
             <div className="InputFirst">
                 <label className="title-">Surname</label>
-                <input placeholder="Surname" maxLength={50} value={surName} className="input-area input-areaFirstPage"
+                <input id="field-surname" placeholder="Surname" maxLength={50} value={surName} className="input-area input-areaFirstPage"
                        onChange={(event) => setSurname(event.target.value)}/>
                 {errorSurName && <Error>{errorSurName}</Error>}
             </div>
             <div className="InputFirst">
                 <label className="title-">Sex</label>
-                <Select value={sex} className="input-area input-areaFirstPage"
+                <Select id="field-sex" value={sex} className="input-area input-areaFirstPage"
                         onChange={(event) => setSex(event.target.value)}>
                     <MenuItem disabled value="n">
                         <p className="notChosen">Не выборано</p>
                     </MenuItem>
-                    <MenuItem value='Man'>Man</MenuItem>
-                    <MenuItem value='Woman'>Woman</MenuItem>
+                    <MenuItem id="field-sex-option-man" value='Man'>Man</MenuItem>
+                    <MenuItem id="field-sex-option-woman" value='Woman'>Woman</MenuItem>
                 </Select>
                 {errorSex && <Error>{errorSex}</Error>}
             </div>
             <div className='btn-pos'>
-                <Button outline onClick={() => navigate('/')}>Назад</Button>
-                <Button onClick={HandleClick}>Далее</Button>
+                <Button id="button-back" outline onClick={() => navigate('/')}>Назад</Button>
+                <Button id="button-next" onClick={HandleClick}>Далее</Button>
             </div>
         </div>
     )

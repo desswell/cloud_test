@@ -16,7 +16,7 @@
 }
 
 .modal_header.error {
-    justify-content: left;
+    justify-content: space-between;
 }
 
 .CompletedIcon {
@@ -29,6 +29,15 @@
     height: 80px;
     margin-left: calc(50% - 80px / 2);
     border-radius: 100px;
+}
+.close-button {
+    background: rgba(0, 0, 0, 0.04);
+    border-radius: 100px;
+    margin-right: 20px;
+    border-color: transparent;
+    height: 28px;
+    width: 28px;
+    padding-top: 5px;
 }
 
 .CompletedIcon.Error {

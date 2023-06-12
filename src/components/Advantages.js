@@ -13,13 +13,13 @@ export function Advantages(data) {
     return (
         <div>
         <div className="field-advantage-">
-            <input className="field-advantage" placeholder={`${props.id + 1} advantage`}  value={advantageDone}
+            <input id={`field-advantage-${props.id + 1}`} className="field-advantage" placeholder={`${props.id + 1} advantage`}  value={advantageDone}
                    onChange={(event) => {
                        const newValue = event.target.value
                        const newAdvantage = {id: props.id, newValue}
                        dispatch(updateAdvantageAction(newAdvantage))
                    }}/>
-            <button className="btn-trash" onClick={() => HandleClick(props.id)}><TrashIcon/></button>
+            <button id={`button-remove-${props.id + 1}`}  className="btn-trash" onClick={() => HandleClick(props.id)}><TrashIcon/></button>
         </div>
             {error && <Error>{error}</Error>}
         </div>

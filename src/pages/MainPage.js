@@ -89,7 +89,7 @@ export function MainPage() {
                        onChange={(event) => setEmail(event.target.value)}/>
                 {errorEmail && <Error>{errorEmail}</Error>}
             </div>
-            <Button onClick={HandleClick}>Начать</Button>
+            <Button id="button-start" onClick={HandleClick}>Начать</Button>
         </div>
     )
 }
