@@ -1,4 +1,4 @@
-@import url(//db.onlinewebfonts.com/c/37086b994764dba84b2ee0f1083bfeed?family=SB+Sans+Interface);
+@import url(https://db.onlinewebfonts.com/c/37086b994764dba84b2ee0f1083bfeed?family=SB+Sans+Interface);
 body {
   transform-origin: top left;
   justify-content: center;
@@ -9,7 +9,7 @@ label {
   display: block;
   margin-bottom: 6px;
 }
-* {font-family: SB Sans Interface}
+*  {font-family: SB Sans Interface !important;}
 
 textarea {
   width: 100%;
