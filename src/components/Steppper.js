@@ -6,7 +6,7 @@ export default function Stepper({ step = 0 }) {
     return (
         <Container>
             {steps.map((curStep, i) => (
-                <>
+                <div key={i}>
                     <Dot left={50 * i} done={i < step} active={i == step}>
                         {i < step && (
                             <CheckIcon />
@@ -16,7 +16,7 @@ export default function Stepper({ step = 0 }) {
                         {i + 1}
                     </StepNumber>
                     {i < 2 && <Line left={50 * i} active={i < step}></Line>}
-                </>
+                </div>
             ))}
         </Container>
     )
