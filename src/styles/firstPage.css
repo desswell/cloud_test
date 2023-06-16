@@ -1,16 +1,3 @@
-.InputFirst {
-    position: relative;
-    padding-top: 48px;
-    margin-top: 3%;
-}
-.InputFirst.select {
-    margin-bottom: 100px;
-}
-
-.InputFirst.textarea {
-    margin-bottom: 10%;
-}
-
 .CheckboxWrapper > div > label {
     height: 20px;
 }
@@ -19,63 +6,9 @@
     height: 20px;
 }
 
-.input-areaFirstPage {
-    width: 300px;
-}
 
-.btn-pos {
-    display: flex;
-    justify-content: space-between;
-}
-
-.notChosen {
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.54);
-}
 @media screen and (min-width: 1921px) {
-    .notChosen {
-        font-size: 24px;
-    }
-    .input-areaFirstPage {
-        width: 600px;
+    .RadioWrapper > div > div {
+        margin-left: 10px;
     }
 }
-/*@media screen and (max-width: 899px) {*/
-/*    !* Стили для экранов меньше 900px *!*/
-
-/*    .InputFirst {*/
-/*        padding-top: 24px;*/
-/*    }*/
-
-/*    .input-areaFirstPage {*/
-/*        width: 100%;*/
-/*        box-sizing: border-box;*/
-/*        padding-right: 16px;*/
-/*        padding-left: 16px;*/
-/*    }*/
-
-/*    .btn-pos {*/
-/*    flex-direction: column*/
-/*}*/
-/*    button {*/
-/*        margin-bottom: 16px;*/
-/*    }*/
-/*}*/
-/*@media screen and (min-width: 1921px) {*/
-/*    !* Стили для экранов с шириной больше 1920px *!*/
-
-/*    .InputFirst {*/
-/*        padding-top: 96px;*/
-/*    }*/
-
-/*    .input-areaFirstPage {*/
-/*        width: 600px;*/
-/*    }*/
-
-/*    .btn-pos {*/
-/*        flex-direction: row;*/
-/*}*/
-/*    button {*/
-/*        margin-right: 16px;*/
-/*    }*/
-/*}*/

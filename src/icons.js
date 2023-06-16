@@ -1,4 +1,5 @@
 import {SvgIcon} from "@mui/material";
+import styled from "styled-components";
 
 export function FolderIcon() {
     return (
@@ -135,3 +136,21 @@ export function CloseIcon () {
         </SvgIcon>
     )
 }
+export function Diver () {
+    return(
+        <StyledDiver>
+        <SvgIcon sx={{ position: 'absolute', width: '100%' }} viewBox="0 0 852 2">
+            <svg width="852" height="2" viewBox="0 0 852 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 1L852 1" stroke="black" strokeOpacity="0.08"/>
+            </svg>
+        </SvgIcon>
+        </StyledDiver>
+    )
+}
+const StyledDiver = styled.div`
+  margin-top: 20px;
+  position: relative;
+  @media screen and (max-width: 800px){
+    margin-bottom: 20px;
+  }
+`

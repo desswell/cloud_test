@@ -14,6 +14,8 @@ import {Checkbox, FormControl, FormControlLabel, FormGroup, Radio, RadioGroup} f
 import Button from "../components/Button";
 import {schemaSecondPage, schemaSecondPageAdvantages} from "../components/Yup";
 import Error from "../components/Error";
+import {Div, DivButtons, DivInput} from "../components/DivContainer";
+import LabelTitle from "../components/Label";
 
 
 
@@ -53,7 +55,6 @@ export function SecondPage() {
             setErrorCheckBox(null)
         } catch (error) {
                 const errors = error.errors
-                console.log(errors)
                 if (errors.length === 2){
                     setErrorCheckBox(errors[0])
                     setErrorRadio(errors[1])
@@ -70,22 +71,22 @@ export function SecondPage() {
         if (errors.every((element) => element === null) && errors.length === advantages.length
         && errorRadio === null && errorCheckBox === null) {
             dispatch(setCheckBoxAction(checkBox))
-            navigate('/3')
+            navigate('/create/3')
         }
     }, [errors])
 
     return (
-        <div className="main-page-container">
+        <Div>
             <Stepper step={1}/>
-            <div className="InputFirst">
-                <label className="title-">Advantages</label>
+            <DivInput>
+                <LabelTitle>Advantages</LabelTitle>
                 {advantageObj.map((data, index) =>
                         <Advantages props={data} error={errors[index]} key={data.id}/>
                     )}
-                <button id="button-add" className="button-add" onClick={HandleClickAdd}><AddIcon/></button>
-            </div>
-            <div className="InputFirst CheckboxWrapper">
-                <label className="title-">Checkbox group</label>
+                <button data-testid="button-add" className="button-add" onClick={HandleClickAdd}><AddIcon/></button>
+            </DivInput>
+            <DivInput className='CheckboxWrapper'>
+                <LabelTitle>Checkbox group</LabelTitle>
                 <FormGroup className="CheckBox" onChange={(event) => {
                     const value = event.target.value
                     if (!checkBox.includes(value)) {
@@ -95,14 +96,14 @@ export function SecondPage() {
                         setCheckBox(checkBox.filter((item) => item !== value))
                     }
                 }}>
-                    <FormControlLabel id="field-checkbox-group-option-1" value={1} control={<Checkbox checked={checkBox.includes('1')}/>} label="1"/>
-                    <FormControlLabel id="field-checkbox-group-option-2" value={2} control={<Checkbox checked={checkBox.includes('2')}/>} label="2"/>
-                    <FormControlLabel id="field-checkbox-group-option-3" value={3} control={<Checkbox checked={checkBox.includes('3')}/>} label="3"/>
+                    <FormControlLabel data-testid="field-checkbox-group-option-1" value={1} control={<Checkbox checked={checkBox.includes('1')}/>} label="1"/>
+                    <FormControlLabel data-testid="field-checkbox-group-option-2" value={2} control={<Checkbox checked={checkBox.includes('2')}/>} label="2"/>
+                    <FormControlLabel data-testid="field-checkbox-group-option-3" value={3} control={<Checkbox checked={checkBox.includes('3')}/>} label="3"/>
                 </FormGroup>
                 {errorCheckBox && <Error>{errorCheckBox}</Error>}
-            </div>
-            <div className="InputFirst RadioWrapper">
-                <label className="title-">Radio group</label>
+            </DivInput>
+            <DivInput className='RadioWrapper'>
+                <LabelTitle>Radio group</LabelTitle>
                 <FormControl className='radio-group'>
                     <RadioGroup
                         aria-labelledby="demo-controlled-radio-buttons-group"
@@ -110,20 +111,20 @@ export function SecondPage() {
                         value={radio}
                         onChange={e => dispatch(setRadioAction(e.target.value))}
                     >
-                        <FormControlLabel id="field-radio-group-option-1" value="1" control={<Radio/>} label="1"/>
-                        <FormControlLabel id="field-radio-group-option-2" value="2" control={<Radio/>} label="2"/>
-                        <FormControlLabel id="field-radio-group-option-3" value="3" control={<Radio/>} label="3"/>
+                        <FormControlLabel data-testid="field-radio-group-option-1" value="1" control={<Radio/>} label="1"/>
+                        <FormControlLabel data-testid="field-radio-group-option-2" value="2" control={<Radio/>} label="2"/>
+                        <FormControlLabel data-testid="field-radio-group-option-3" value="3" control={<Radio/>} label="3"/>
                     </RadioGroup>
                 </FormControl>
                 {errorRadio && <Error>{errorRadio}</Error>}
-            </div>
-            <div className='btn-pos'>
-                <Button id="button-back" outline onClick={() => {
+            </DivInput>
+            <DivButtons>
+                <Button data-testid="button-back" outline onClick={() => {
                     dispatch(setCheckBoxAction(checkBox))
-                    navigate('/1')
+                    navigate('/create/1')
                 }}>Назад</Button>
-                <Button id="button-next" onClick={HandleClick}>Далее</Button>
-            </div>
-        </div>
+                <Button data-testid="button-next" onClick={HandleClick}>Далее</Button>
+            </DivButtons>
+        </Div>
     )
 }

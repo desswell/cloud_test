@@ -15,9 +15,9 @@ function App() {
             <BrowserRouter basename='/'>
                 <Routes>
                     <Route exact path='/' element={<MainPage/>}/>
-                    <Route exact path='/1' element={<FirstPage/>}/>
-                    <Route exact path='/2' element={<SecondPage/>}/>
-                    <Route exact path='/3' element={<ThirdPage/>}/>
+                    <Route exact path='/create/1' element={<FirstPage/>}/>
+                    <Route exact path='/create/2' element={<SecondPage/>}/>
+                    <Route exact path='/create/3' element={<ThirdPage/>}/>
                 </Routes>
             </BrowserRouter>
         </div>

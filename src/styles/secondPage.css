@@ -9,16 +9,6 @@
     border-radius: 4px;
     background: #FFFFFF;
 }
-.field-advantage {
-    box-sizing: border-box;
-    padding: 12px;
-    width: 300px;
-    height: 44px;
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.16);
-    border-radius: 4px;
-    margin-bottom: 8px;
-}
 .field-advantage- {
     display: flex;
     align-items: center;
@@ -32,12 +22,6 @@
 max-width: 20px;
 }
 @media screen and (min-width: 1921px) {
-    .field-advantage{
-        width: 600px;
-        height: 64px;
-        font-size: 24px;
-        margin-bottom: 16px;
-    }
     .button-add {
         margin-top: 20px;
         width: 88px;

@@ -14,7 +14,7 @@ export const Modal = ({active, setActive, errorAxios ,children}) => {
             <div className={active ? 'modal__content active' : 'modal__content'} onClick={e => e.stopPropagation()}>
                 {children}
                 <div className={errorAxios ? "Button-close error" : 'Button-close'}>
-                <Button id={errorAxios ? "button-close" : "button-to-main"} onClick={HandleClick}>{errorAxios ? "Закрыть" : "На главную"}</Button>
+                <Button data-testid={errorAxios ? "button-close" : "button-to-main"} onClick={HandleClick}>{errorAxios ? "Закрыть" : "На главную"}</Button>
                 </div>
             </div>
         </div>

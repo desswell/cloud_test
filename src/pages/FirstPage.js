@@ -14,6 +14,11 @@ import {useDispatch} from "react-redux";
 import Button from "../components/Button";
 import Error from "../components/Error";
 import {schemaFirstPage} from "../components/Yup";
+import Input from "../components/Input";
+import LabelTitle from "../components/Label";
+import {Div, DivButtons, DivInput} from "../components/DivContainer";
+
+
 
 export function FirstPage() {
     const nicknameDone = useNickname()
@@ -44,7 +49,7 @@ export function FirstPage() {
             sex: sex
         }, {abortEarly: false}).then(val => {
                 dispatching()
-                navigate('/2')
+                navigate('/create/2')
             }
         ).catch(error => {
             const errors = error.errors
@@ -62,45 +67,45 @@ export function FirstPage() {
         })
     }
     return (
-        <div className="main-page-container">
+        <Div>
             <Stepper step={0}/>
-            <div className="InputFirst">
-                <label className="title-">NickName</label>
-                <input id="field-nickname" placeholder="Nickname" maxLength={30} value={nickname} className="input-area input-areaFirstPage"
+            <DivInput>
+                <LabelTitle>NickName</LabelTitle>
+                <Input outline data-testid="field-nickname" placeholder="Nickname" maxLength={30} value={nickname}
                        onChange={(event) => setNickname(event.target.value)}/>
                 {errorNickname && <Error>{errorNickname}</Error>}
-            </div>
-            <div className="InputFirst">
-                <label className="title-">Name</label>
-                <input id="field-name" placeholder="Name" maxLength={50} value={name} className="input-area input-areaFirstPage"
+            </DivInput>
+            <DivInput>
+                <LabelTitle>Name</LabelTitle>
+                <Input outline data-testid="field-name" placeholder="Name" maxLength={50} value={name}
                        onChange={(event) => setName(event.target.value)}/>
                 {errorName && <Error>{errorName}</Error>}
-            </div>
-            <div className="InputFirst">
-                <label className="title-">Surname</label>
-                <input id="field-surname" placeholder="Surname" maxLength={50} value={surName} className="input-area input-areaFirstPage"
+            </DivInput>
+            <DivInput>
+                <LabelTitle>Surname</LabelTitle>
+                <Input outline data-testid="field-sername" placeholder="Surname" maxLength={50} value={surName}
                        onChange={(event) => setSurname(event.target.value)}/>
                 {errorSurName && <Error>{errorSurName}</Error>}
-            </div>
-            <div className="InputFirst select">
-                <label className="title-">Sex</label>
-                <Select id="field-sex" value={sex} className="input-area select input-areaFirstPage "
+            </DivInput>
+            <DivInput selector>
+                <LabelTitle>Sex</LabelTitle>
+                <Select data-testid="field-sex" value={sex} className="select"
                         onChange={(event) => setSex(event.target.value)}>
                     {sex === 'n' && <MenuItem className="notChosen" disabled value="n">
                         Не выборано
                     </MenuItem>}
-                    <MenuItem id="field-sex-option-man" value='Man'>Man</MenuItem>
-                    <MenuItem id="field-sex-option-woman" value='Woman'>Woman</MenuItem>
+                    <MenuItem data-testid="field-sex-option-man" value='Man'>Man</MenuItem>
+                    <MenuItem data-testid="field-sex-option-woman" value='Woman'>Woman</MenuItem>
                 </Select>
                 {errorSex && <Error>{errorSex}</Error>}
-            </div>
-            <div className='btn-pos'>
-                <Button id="button-back" outline onClick={() => {
+            </DivInput>
+            <DivButtons>
+                <Button data-testid="button-back" outline onClick={() => {
                     dispatching()
                     navigate('/')
                 }}>Назад</Button>
-                <Button id="button-next" onClick={HandleClick}>Далее</Button>
-            </div>
-        </div>
+                <Button data-testid="button-next" onClick={HandleClick}>Далее</Button>
+            </DivButtons>
+        </Div>
     )
 }

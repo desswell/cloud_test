@@ -10,5 +10,6 @@ const StyledError = styled.span`
   @media screen and (min-width: 1921px) {
   font-size: 130%;
   }
+  position: ${p => p.textarea ? "absolute" : ''};
 `
 export default Error

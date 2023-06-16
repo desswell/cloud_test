@@ -9,13 +9,15 @@ import Error from "../components/Error";
 import axios from "axios";
 import {Modal} from "../components/Modal";
 import {CloseIcon, CompleteIcon, ErrorIcon} from "../icons";
+import {Div, DivButtons, DivInput} from "../components/DivContainer";
+import LabelTitle from "../components/Label";
+
 
 export function ThirdPage () {
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const about = useAbout()
+    const [about, setAbout] = useState(useAbout())
     const data = useData()
-
     const [active, setActive] = useState(false)
     const maxLength = 200
     const [length, setLength] = useState(about.length)
@@ -31,6 +33,7 @@ export function ThirdPage () {
         })
     }
     const HandleClick = () => {
+        dispatch(setAboutAction(about.trim()))
         schemaThirdPage.validate({
             about: about
         }, {abortEarly: false})
@@ -41,24 +44,33 @@ export function ThirdPage () {
             })
             .catch((error) => setError(error.message))
     }
+    const HandleChange = (event) => {
+        setAbout(event.target.value.replace(/\s\s+/g, ' '))
+        const TextWithoutSpace = event.target.value.replace(/\s/g, '')
+        setLength(TextWithoutSpace.length)
+        const newMax = event.target.value.length <= maxLength ? maxLength : event.target.value.length
+        event.target.maxLength = newMax
+    }
     return(
-        <div className="main-page-container">
+        <Div>
             <Stepper step={2}/>
-            <div className="InputFirst textarea">
-                <label className="title-">About</label>
-                <textarea id="field-about" maxLength={200} placeholder="About" value={about} onChange={(event) => {
-                    dispatch(setAboutAction(event.target.value))
-                    setLength(event.target.value.length)
+            <DivInput textarea>
+                <LabelTitle>About</LabelTitle>
+                <textarea data-testid="field-about" maxLength={maxLength} placeholder="About" value={about} onChange={(event) => {
+                    HandleChange(event)
                 }}/>
                 <div className="counter">
                     {length}/{maxLength}
                 </div>
-            </div>
-            {error && <Error>{error}</Error>}
-            <div className='btn-pos'>
-                <Button id="button-back" outline onClick={() => navigate('/2')}>Назад</Button>
-                <Button id="button-next" onClick={HandleClick}>Отправить</Button>
-            </div>
+                {error && <Error textarea>{error}</Error>}
+            </DivInput>
+            <DivButtons>
+                <Button data-testid="button-back" outline onClick={() => {
+                    dispatch(setAboutAction(about.trim()))
+                    navigate('/create/2')
+                }}>Назад</Button>
+                <Button data-testid="button-next" onClick={HandleClick}>Отправить</Button>
+            </DivButtons>
             {active && <Modal active={active} setActive={setActive} errorAxios={errorAxios}>
                 <div className={errorAxios ? "modal_header error" : "modal_header"}>
                     {errorAxios ? 'Ошибка' : 'Форма успешно отправлена'}
@@ -70,6 +82,6 @@ export function ThirdPage () {
                     {errorAxios ? <ErrorIcon/> : <CompleteIcon/>}
                 </div>
             </Modal>}
-        </div>
+        </Div>
     )
 }
