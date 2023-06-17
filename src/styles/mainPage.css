@@ -61,6 +61,7 @@
     .avatarMain {
         width: 65px;
     }
+
     .Input {
         padding-top: 24px;
     }
@@ -68,18 +69,20 @@
     .positions {
         padding: 0 10px;
     }
+
     .input-area {
         width: 50%;
     }
 }
+
 @media screen and (max-width: 365px) {
     .linkTo {
         display: block;
     }
 }
+
 @media screen and (min-width: 1921px) {
     /* Стили для экранов с шириной больше 1920px */
-
     .avatarMain {
         width: 160px;
         height: 160px;
@@ -110,6 +113,7 @@
         width: 800px;
         font-size: 24px;
     }
+
     .downInput {
         padding-top: 48px;
     }

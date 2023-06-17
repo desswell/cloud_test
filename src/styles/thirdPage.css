@@ -30,6 +30,7 @@
     margin-left: calc(50% - 80px / 2);
     border-radius: 100px;
 }
+
 .close-button {
     background: rgba(0, 0, 0, 0.04);
     border-radius: 100px;
@@ -43,9 +44,9 @@
 .CompletedIcon.Error {
     background: rgba(232, 78, 88, 0.15);
 }
+
 @media screen and (max-width: 899px) {
     /* Стили для экранов меньше 900px */
-
     .counter {
         bottom: 8px;
     }
@@ -69,10 +70,12 @@
         height: 50px;
         width: 50px;
     }
+
     .counter {
         bottom: 5px;
         font-size: 16px;
     }
+
     .modal_header {
         padding-left: 25px;
         font-size: 28px;

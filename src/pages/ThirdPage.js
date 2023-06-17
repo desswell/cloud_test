@@ -69,7 +69,7 @@ export function ThirdPage () {
                     dispatch(setAboutAction(about.trim()))
                     navigate('/create/2')
                 }}>Назад</Button>
-                <Button data-testid="button-next" onClick={HandleClick}>Отправить</Button>
+                <Button data-testid="button-send" onClick={HandleClick}>Отправить</Button>
             </DivButtons>
             {active && <Modal active={active} setActive={setActive} errorAxios={errorAxios}>
                 <div className={errorAxios ? "modal_header error" : "modal_header"}>

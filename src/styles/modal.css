@@ -27,21 +27,24 @@
     transform: scale(0.5);
     transition: 0.4s;
 }
+
 .modal__content.active {
     transform: scale(1);
 }
+
 .Button-close {
     display: flex;
     justify-content: center;
     margin-top: 30px;
 }
+
 .Button-close.error {
     justify-content: right;
     margin-right: 30px;
 }
+
 @media screen and (max-width: 899px) {
     /* Стили для экранов меньше 900px */
-
     .modal {
         overflow: auto;
     }
@@ -61,11 +64,11 @@
 
 @media screen and (min-width: 1921px) {
     /* Стили для экранов с шириной больше 1920px */
-
     .modal__content {
         width: 920px;
         height: 624px;
     }
+
     .Button-close {
         margin-top: 120px;
     }

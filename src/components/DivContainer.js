@@ -1,8 +1,9 @@
 import styled from 'styled-components'
+
 export const Div = ({children, ...restProps}) => {
     return <StyledDiv {...restProps}>{children}</StyledDiv>
 }
- const StyledDiv = styled.div`
+const StyledDiv = styled.div`
   max-width: 900px;
   background: white;
   padding: 24px;

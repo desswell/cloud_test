@@ -80,7 +80,7 @@ export function MainPage() {
             <Diver/>
             <div className="Input">
                 <LabelTitle>Номер телефона</LabelTitle>
-                <InputMask mask="+7 (999)-999-99-99" value={phone} placeholder="+7 (999)-999-99-99"
+                <InputMask mask="+7 (999)-999-99-99" value={phone} disabled placeholder="+7 (999)-999-99-99"
                            className="input-area" onChange={(event) => {
                     setPhone(event.target.value)
                 }}/>
@@ -88,7 +88,7 @@ export function MainPage() {
             </div>
             <div className="Input downInput">
                 <LabelTitle>Email</LabelTitle>
-                <Input placeholder="example@example.ru" value={email}
+                <Input placeholder="example@example.ru" value={email} disabled
                        onChange={(event) => setEmail(event.target.value)}/>
                 {errorEmail && <Error>{errorEmail}</Error>}
             </div>

@@ -83,7 +83,7 @@ export function SecondPage() {
                 {advantageObj.map((data, index) =>
                         <Advantages props={data} error={errors[index]} key={data.id}/>
                     )}
-                <button data-testid="button-add" className="button-add" onClick={HandleClickAdd}><AddIcon/></button>
+                <button data-testid="button add" className="button-add" onClick={HandleClickAdd}><AddIcon/></button>
             </DivInput>
             <DivInput className='CheckboxWrapper'>
                 <LabelTitle>Checkbox group</LabelTitle>

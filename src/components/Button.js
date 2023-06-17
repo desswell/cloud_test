@@ -14,6 +14,7 @@ const StyledButton = styled.button`
   &:active {
     background: ${p => p.outline ? '#DDD' : "#4144fc"}
   }
+
   @media screen and (min-width: 1921px) {
     margin: 50px 40px 50px 40px;
     transform: scale(2);

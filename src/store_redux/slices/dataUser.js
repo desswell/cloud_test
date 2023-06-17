@@ -5,8 +5,8 @@ import { useSelector } from "react-redux";
 const DataSlice = createSlice({
     name: "data",
     initialState: {
-        phone: '',
-        email: '',
+        phone: '+7 (916)-336-14-18',
+        email: 'kam.tkd@yandex.ru',
         nickname: '',
         name: '',
         surname: '',

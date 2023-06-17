@@ -4,6 +4,7 @@ import {delAdvantagesAction, updateAdvantageAction, useAdvantages} from "../stor
 import Error from "../components/Error";
 import React from "react";
 import Input from "./Input";
+
 export function Advantages(data) {
     const {props, error} = data
     const dispatch = useDispatch()
@@ -13,15 +14,17 @@ export function Advantages(data) {
     }
     return (
         <div>
-        <div className="field-advantage-">
-            <Input advantage data-testid={`field-advantage-${props.id + 1}`} placeholder={`${props.id + 1} advantage`}  value={advantageDone}
-                   onChange={(event) => {
-                       const newValue = event.target.value
-                       const newAdvantage = {id: props.id, newValue}
-                       dispatch(updateAdvantageAction(newAdvantage))
-                   }}/>
-            <button data-testid={`button-remove-${props.id + 1}`}  className="btn-trash" onClick={() => HandleClick(props.id)}><TrashIcon/></button>
-        </div>
+            <div className="field-advantage-">
+                <Input advantage data-testid={`field-advantages-${props.id + 1}`}
+                       placeholder={`${props.id + 1} advantage`} value={advantageDone}
+                       onChange={(event) => {
+                           const newValue = event.target.value
+                           const newAdvantage = {id: props.id, newValue}
+                           dispatch(updateAdvantageAction(newAdvantage))
+                       }}/>
+                <button data-testid={`button-remove-${props.id + 1}`} className="btn-trash"
+                        onClick={() => HandleClick(props.id)}><TrashIcon/></button>
+            </div>
             {error && <Error>{error}</Error>}
         </div>
     )

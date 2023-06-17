@@ -1,7 +1,7 @@
 import * as yup from 'yup';
 
 const regK = /^[a-zA-Z0-9\u0410-\u044F ]+$/;
-const regSymbols =  /^[a-zA-Z\u0410-\u044F ]+$/;
+const regSymbols = /^[a-zA-Z\u0410-\u044F ]+$/;
 const regEmail = /\S+@\S+\.\S+/;
 const phoneRegExp = /^\+7 \(\d{3}\)-\d{3}-\d{2}-\d{2}$/;
 export const schemaMainPage = yup.object().shape(
