@@ -81,7 +81,7 @@ export function SecondPage() {
             <DivInput>
                 <LabelTitle>Advantages</LabelTitle>
                 {advantageObj.map((data, index) =>
-                        <Advantages props={data} error={errors[index]} key={data.id}/>
+                        <Advantages props={data} error={errors[index]} setError={setErrors} key={data.id}/>
                     )}
                 <button data-testid="button add" className="button-add" onClick={HandleClickAdd}><AddIcon/></button>
             </DivInput>

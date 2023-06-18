@@ -10,4 +10,11 @@
     .RadioWrapper > div > div {
         margin-left: 10px;
     }
+    .CheckboxWrapper>div>label, .RadioWrapper>div>div>label {
+        margin-bottom: 50px;
+    }
+    .css-9l3uo3 {
+        font-size: 2em !important;
+        margin-left: 20px !important;
+    }
 }

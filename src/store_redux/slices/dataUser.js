@@ -11,7 +11,7 @@ const DataSlice = createSlice({
         name: '',
         surname: '',
         sex: 'n',
-        advantages: [],
+        advantages: ['', '', ''],
         radio: '',
         checkbox: [],
         about: ''

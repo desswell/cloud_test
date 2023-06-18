@@ -6,10 +6,14 @@ import React from "react";
 import Input from "./Input";
 
 export function Advantages(data) {
-    const {props, error} = data
+    const {props, error, setError} = data
     const dispatch = useDispatch()
     const advantageDone = useAdvantages().filter((value, index) => index === props.id)
     const HandleClick = (index) => {
+        setError((error) => {
+            error[props.id] = null
+            return error
+        })
         dispatch(delAdvantagesAction(index))
     }
     return (
