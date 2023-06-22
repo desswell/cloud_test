@@ -23,8 +23,8 @@ export function ThirdPage () {
     const [length, setLength] = useState(about.length)
     const [error, setError] = useState(null)
     const [errorAxios, setErrorAxios] = useState(true)
-    async function postAxiosData () {
-        await axios.post(`https://api.sbercloud.ru/content/v1/bootcamp/frontend`, data).then(() => {
+    function postAxiosData () {
+        axios.post(`https://api.sbercloud.ru/content/v1/bootcamp/frontend`, data).then(() => {
             setActive(true)
             setErrorAxios(false)
         }).catch(() => {
@@ -39,8 +39,7 @@ export function ThirdPage () {
         }, {abortEarly: false})
             .then(() => {
                 setError(null)
-                postAxiosData().then(
-                )
+                postAxiosData()
             })
             .catch((error) => setError(error.message))
     }
